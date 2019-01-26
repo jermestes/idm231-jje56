@@ -29,3 +29,10 @@ For my project, I'm doing "which basketball player are you". Each zodiac will be
 | Scorpio | Russell Westbrook | Loyalty is important to you. You’d rather put the team on your back then take the easy way out, and people respect that. | TBD |
 | Sagittarius | Larry Bird | You may not look the part, but there’s no doubt you can compete with the best | TBD |
 
+### Media To-Do List
+1. Download unique sound-byte for all 12 players. 
+2. Create main image (app logo above title & description).
+3. Create reveal image for each of the 12 players.
+
+### Structure (HTML) 
+- Zodiac sign balls: class = "zodiac_ball" & id = "playername_ball"
