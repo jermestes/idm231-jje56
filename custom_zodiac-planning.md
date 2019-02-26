@@ -30,9 +30,23 @@ For my project, I'm doing "which basketball player are you". Each zodiac will be
 | Sagittarius | Larry Bird | You may not look the part, but there’s no doubt you can compete with the best | TBD |
 
 ### Media To-Do List
-1. Download unique sound-byte for all 12 players. 
+1. ~~Download unique sound-byte for all 12 players.~~ 
 2. Create main image (app logo above title & description).
 3. Create reveal image for each of the 12 players.
 
-### Structure (HTML) 
-- Zodiac sign balls: class = "zodiac_ball" & id = "playername_ball"
+### Structure & Style Planning (HTML & CSS) 
+* Zodiac sign balls: class = "zodiac_ball" & id = "playername_ball"
+  * LeBron: BKG Purple, TXT White, BOR Yellow 
+  * Jordan: BKG Red, TXT Black, BOR White
+  * Curry: BKG Black, TXT Yellow, BOR Blue
+  * Kyrie: BKG White, TXT Green, BOR Green
+  * Duncan: BKG Black, TXT Silver, BOR White
+  * Iverson: BKG Black, TXT Gold, BOR Red
+  * Kawhi: BKG White, TXT Black, BOR Red
+  * Wilt: BKG White, TXT Red, BOR Blue 
+  * Harden: BKG Red, TXT White, BOR White
+  * Durant: BKG Blue, TXT White, BOR Yellow
+  * Westbrook: BKG Blue, TXT White, BOR White
+  * Bird: BKG Green, TXT White, BOR White
+  * https://teamcolorcodes.com/nba-team-color-codes/ for official colors in code.
+

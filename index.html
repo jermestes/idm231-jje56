@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="images/favicon.png"> 
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>NBA Horiscope</title>
+</head>
+
+<body>
+    
+
+    <main>
+        <!-- Left/Top of page. Gives app description/instructions-->        
+        <section class="mainContainer" id="zodiacInfo">    
+            <img src="https://via.placeholder.com/300x300.png">
+            <h1 id="pageTitle">Jerm's NBA Horiscope Machine</h1> 
+            <p>Which NBA star does the universe say you are? Enter your birth date below or choose the ball with your
+                zodiac sign to find out!
+            </p>
+
+            <!-- Form for user to enter their birth date -->
+            <form id="birthdayForm">
+                <label for="month"> D.O.B </label><br>
+                <input type="date" name="month"><br>
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+
+        <!-- Right/Bottom of page. Gives pane of zodiac signs and user's result after submitting the form. -->
+        <section class="mainContainer" id="zodiacZone">
+
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>
