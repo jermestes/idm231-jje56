@@ -81,6 +81,7 @@ form {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .zodiac_balls {
@@ -95,74 +96,76 @@ form {
     cursor: pointer;
 }
 
+.zodiac_balls:focus { outline: 0;}
+
 /* Styling the individual basketballs based on player's team color*/
-#LeBron {
+#leBron {
     background-color: var(--LAL_purple);
     color: white;
     border-color: var(--GSWLAL_gold);
 }
 
-#Michael {
+#michael {
     background-color: var(--CHIHOUTOR_red);
     color: black;
     border-color: black;
 }
 
-#Steph {
+#steph {
     background-color: var(--GSWLAL_gold);
     color: var(--GSW_slate);
     border-color: var(--GSW_blue);
 }
 
-#Kyrie {
+#kyrie {
     background-color: white;
     color: var(--BOS_green);
     border-color: var(--BOS_green);
 }
 
-#Tim {
+#tim {
     background-color: var(--SAS_silver);
     color: black;
     border-color: white;
 }
 
-#Allen {
+#allen {
     background-color: black;
     color: var(--PHI_gold);
     border-color: var(--PHI_red);
 }
 
-#Kawhi {
+#kawhi {
     background-color: white;
     color: black;
     border-color: var(--CHIHOUTOR_red);
 }
 
-#Wilt {
+#wilt {
     background-color: var(--PHI_blue);
     color: var(--PHI_red);
     border-color: white;
 }
 
-#James {
+#james {
     background-color: var(--CHIHOUTOR_red);
     color: white;
     border-color: white;
 }
 
-#Kevin {
+#kevin {
     background-color: var(--OKC_darkblue);
     color: white;
     border-color: var(--GSWLAL_gold);
 }
 
-#Russell {
+#russell {
     background-color: var(--OKC_lightblue);
     color: white;
     border-color: var(--OKC_orange);
 }
 
-#Larry {
+#larry {
     background-color: var(--BOS_green);
     color: white;
     border-color: white;
@@ -185,5 +188,6 @@ form {
 
     #zodiacZone {
         grid-area: rightside;
+        justify-content: left;
     }
 }

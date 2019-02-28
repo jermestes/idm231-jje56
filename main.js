@@ -16,18 +16,18 @@ function insertZodiac(sign, firstName, lastName, quote) {
 }
 
 
-insertZodiac('Capricorn','LeBron','James','You strive for greatness. When all is said and done, the only debate will be whether you’re call you King or G.O.A.T');
-insertZodiac('Aquarius','Michael','Jordan','Everyone wants to be like you. There’s just a certain "air" to you');
-insertZodiac('Pisces','Steph','Curry','The way you play might not be appreciated by old-timers, but the revolution you lead speaks for itself.');
-insertZodiac('Aries','Kyrie','Irving','You care about legacy and do not want to live in someone else’s shadow');
-insertZodiac('Taurus','Tim','Duncan','You understand the importance of fundamentals and it will make you a master of your craft');
-insertZodiac('Gemini','Allen','Iverson','You’re a trend-setter. Things you do may seem unorthodox, but people will come to love it');
-insertZodiac('Cancer','Kawhi','Leonard','Some say you’re too quiet: but your laugh is unforgettable');
-insertZodiac('Leo','Wilt','Chamberlain','You walk and talk a big game. If others haven’t already seen it, just show them your stat sheet.');
-insertZodiac('Virgo','James','Harden','You have an uncanny ability to score. This success could bring plenty of travelling!');
-insertZodiac('Libra', 'Kevin','Durant','You’re one of a kind, but you worry too much about what others think. Be careful on social media!');
-insertZodiac('Scorpio','Russell','Westbrook','Loyalty is important to you. You’d rather put the team on your back then take the easy way out, and people respect that.');
-insertZodiac('Sagittarius','Larry','Bird','You may not look the part, but there’s no doubt you can compete with the best');
+insertZodiac('Capricorn','leBron','james','You strive for greatness. When all is said and done, the only debate will be whether you’re call you King or G.O.A.T');
+insertZodiac('Aquarius','michael','jordan','Everyone wants to be like you. There’s just a certain "air" to you');
+insertZodiac('Pisces','steph','curry','The way you play might not be appreciated by old-timers, but the revolution you lead speaks for itself.');
+insertZodiac('Aries','kyrie','irving','You care about legacy and do not want to live in someone else’s shadow');
+insertZodiac('Taurus','tim','duncan','You understand the importance of fundamentals and it will make you a master of your craft');
+insertZodiac('Gemini','allen','iverson','You’re a trend-setter. Things you do may seem unorthodox, but people will come to love it');
+insertZodiac('Cancer','kawhi','leonard','Some say you’re too quiet: but your laugh is unforgettable');
+insertZodiac('Leo','wilt','chamberlain','You walk and talk a big game. If others haven’t already seen it, just show them your stat sheet.');
+insertZodiac('Virgo','james','harden','You have an uncanny ability to score. This success could bring plenty of travelling!');
+insertZodiac('Libra', 'kevin','durant','You’re one of a kind, but you worry too much about what others think. Be careful on social media!');
+insertZodiac('Scorpio','russell','westbrook','Loyalty is important to you. You’d rather put the team on your back then take the easy way out, and people respect that.');
+insertZodiac('Sagittarius','larry','bird','You may not look the part, but there’s no doubt you can compete with the best');
 
 
 //loop to create zodiac balls
