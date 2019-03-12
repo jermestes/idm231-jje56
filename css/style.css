@@ -49,7 +49,7 @@ main {
     flex-wrap: wrap;
 }
 
-.mainContainer {
+.mainContainers {
     padding: 1rem;
     margin-top: .7rem;
 }
@@ -77,11 +77,11 @@ form {
 }
 
 /* Basketballs for each zodiac sign */
-#zodiacZone {
+#zoneContent {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: center;
+    /*NEED TO ADD FADE IN/OUT FOR PLAYER REVEALS AND RESETS*/
 }
 
 .zodiac_balls {
@@ -94,6 +94,17 @@ form {
 
 .zodiac_balls:hover {
     cursor: pointer;
+}
+
+/* TEMPORARY PIC-SIZING SOLUTION. WILL USE PICTURE ELEMENT LATER  */
+.playerPic {
+    width: 18.75rem;
+}
+
+#playerRevealed {
+    display: grid;
+    grid-template: auto auto auto auto auto / 100%;
+    justify-items: center;
 }
 
 .zodiac_balls:focus { outline: 0;}
@@ -190,4 +201,17 @@ form {
         grid-area: rightside;
         justify-content: left;
     }
+
+    #zoneContent {
+        justify-content: start;
+    }
+    
+    #playerRevealed {
+        flex-flow: row wrap;
+    }
+
+    .playerPic {
+        width: 35rem;
+    }
 }
+

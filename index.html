@@ -16,7 +16,7 @@
 
     <main>
         <!-- Left/Top of page. Gives app description/instructions-->        
-        <section class="mainContainer" id="zodiacInfo">    
+        <section class="mainContainers" id="zodiacInfo">    
             <img src="https://via.placeholder.com/300x300.png">
             <h1 id="pageTitle">Jerm's NBA Horiscope Machine</h1> 
             <p>Which NBA star does the universe say you are? Enter your birth date below or click the ball with your
@@ -31,9 +31,17 @@
             </form>
         </section>
 
-        <!-- Right/Bottom of page. Gives pane of zodiac signs and user's result after submitting the form. -->
-        <section class="mainContainer" id="zodiacZone">
+        <!-- Right (desktop) or Bottom (mobile) half of the page. -->
+        <section class="mainContainers" id="zodiacZone">
+            <!-- When zodiac balls displayed-->
+            <div id="zoneContent">
 
+            </div>
+
+            <!-- When player result displayed-->
+            <div id="playerRevealed">
+    
+            </div>
         </section>
     </main>
     <script src="main.js"></script>
