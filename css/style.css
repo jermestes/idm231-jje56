@@ -81,6 +81,7 @@ form {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    align-content: space-around;
     /*NEED TO ADD FADE IN/OUT FOR PLAYER REVEALS AND RESETS*/
 }
 
@@ -89,7 +90,7 @@ form {
     border-radius: 50%;
     width: 6.25rem;
     height: 6.25rem;
-    margin: .33rem;
+    margin: 0 1.33rem 1.33rem 0;
 }
 
 .zodiac_balls:hover {
@@ -110,73 +111,73 @@ form {
 .zodiac_balls:focus { outline: 0;}
 
 /* Styling the individual basketballs based on player's team color*/
-#leBron {
+.leBron {
     background-color: var(--LAL_purple);
     color: white;
     border-color: var(--GSWLAL_gold);
 }
 
-#michael {
+.michael {
     background-color: var(--CHIHOUTOR_red);
     color: black;
     border-color: black;
 }
 
-#steph {
+.steph {
     background-color: var(--GSWLAL_gold);
     color: var(--GSW_slate);
     border-color: var(--GSW_blue);
 }
 
-#kyrie {
+.kyrie {
     background-color: white;
     color: var(--BOS_green);
     border-color: var(--BOS_green);
 }
 
-#tim {
+.tim {
     background-color: var(--SAS_silver);
     color: black;
     border-color: white;
 }
 
-#allen {
+.allen {
     background-color: black;
     color: var(--PHI_gold);
     border-color: var(--PHI_red);
 }
 
-#kawhi {
+.kawhi {
     background-color: white;
     color: black;
     border-color: var(--CHIHOUTOR_red);
 }
 
-#wilt {
+.wilt {
     background-color: var(--PHI_blue);
     color: var(--PHI_red);
     border-color: white;
 }
 
-#james {
+.james {
     background-color: var(--CHIHOUTOR_red);
     color: white;
     border-color: white;
 }
 
-#kevin {
+.kevin {
     background-color: var(--OKC_darkblue);
     color: white;
     border-color: var(--GSWLAL_gold);
 }
 
-#russell {
+.russell {
     background-color: var(--OKC_lightblue);
     color: white;
     border-color: var(--OKC_orange);
 }
 
-#larry {
+.larry {
     background-color: var(--BOS_green);
     color: white;
     border-color: white;
@@ -214,4 +215,3 @@ form {
         width: 35rem;
     }
 }
-

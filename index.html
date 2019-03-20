@@ -12,8 +12,6 @@
 </head>
 
 <body>
-    
-
     <main>
         <!-- Left/Top of page. Gives app description/instructions-->        
         <section class="mainContainers" id="zodiacInfo">    
@@ -26,7 +24,7 @@
             <!-- Form for user to enter their birth date -->
             <form id="birthdayForm">
                 <label for="month"> D.O.B </label><br>
-                <input type="date" name="month"><br>
+                <input type="date" name="bday" id="bday" required><br>
                 <input type="submit" value="Submit">
             </form>
         </section>
@@ -39,9 +37,9 @@
             </div>
 
             <!-- When player result displayed-->
-            <div id="playerRevealed">
+            <!--<div id="playerRevealed">
     
-            </div>
+            </div>-->
         </section>
     </main>
     <script src="main.js"></script>
