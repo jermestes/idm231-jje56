@@ -66,13 +66,13 @@ zodiacList.forEach(sign => {
   //create player profiles
   //individual divs with class and id
   const createPlayerDiv = document.createElement('div');
-  createPlayerDiv.setAttribute('class', 'zodiac_profiles')
+  createPlayerDiv.setAttribute('class', 'zodiac_profiles');
   createPlayerDiv.setAttribute('id', sign.sign);
   createPlayerDiv.style.display = 'none';
 
   //generate player sign and name
   const playerSignElement = document.createElement('h1');
-  const playerSign = document.createTextNode(`${player.sign}: ${player.firstName} ${player.lastName}`)
+  const playerSign = document.createTextNode(`${player.sign}`)
   playerSignElement.appendChild(playerSign);
   createPlayerDiv.appendChild(playerSignElement);
 
@@ -84,7 +84,7 @@ zodiacList.forEach(sign => {
 
   //generate player nickname
   const playerNameElement = document.createElement('h2');
-  const playerName = document.createTextNode(`"${player.nickname}"`);
+  const playerName = document.createTextNode(`${player.firstName} ${player.lastName} - "${player.nickname}"`);
   playerNameElement.appendChild(playerName);
   createPlayerDiv.appendChild(playerNameElement);
 
@@ -92,11 +92,12 @@ zodiacList.forEach(sign => {
   const playerQuoteElement = document.createElement('p');
   const playerQuote = document.createTextNode(`${player.quote}`);
   playerQuoteElement.appendChild(playerQuote);
-  createPlayerDiv.appendChild(playerQuote);
+  createPlayerDiv.appendChild(playerQuoteElement);
 
   //reset button
   const resetButton = document.createElement('button');
   const resetText = document.createTextNode('Reset');
+  resetButton.classList.add('resetButton');
   resetButton.addEventListener('click', reset, false);
   resetButton.appendChild(resetText);
   createPlayerDiv.appendChild(resetButton);

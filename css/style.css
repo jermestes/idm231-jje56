@@ -43,6 +43,10 @@ h1,h2,h3,h4,h5,h6 {
     letter-spacing: 3px;
 }
 
+header {
+    background-color: #333533;
+}
+
 main {
     display: flex;
     flex-direction: row;
@@ -51,7 +55,6 @@ main {
 
 .mainContainers {
     padding: 1rem;
-    margin-top: .7rem;
 }
 
 #pageTitle {
@@ -65,15 +68,27 @@ p {
 }
 
 #zodiacInfo {
-    text-align: center;
+    text-align: left;
+    background-color: #333533;
+}
+
+#infoBox {
+    width: 18.75rem;
+    height: 18.75rem;
+    background-color: #177e89;
+    text-align: left;
 }
 
 #zodiacInfo p {
     padding: 0 3rem;
 }
 
-form {
+p, form {
     line-height: 2rem;
+}
+
+form {
+    text-align: center;
 }
 
 /* Basketballs for each zodiac sign */
@@ -97,9 +112,14 @@ form {
     cursor: pointer;
 }
 
+.zodiac_profiles {
+    display: block;
+    text-align: center;
+}
+
 /* TEMPORARY PIC-SIZING SOLUTION. WILL USE PICTURE ELEMENT LATER  */
 .playerPic {
-    width: 18.75rem;
+    width: 100%;
 }
 
 #playerRevealed {
@@ -184,13 +204,13 @@ form {
 }
 
 /*Grid layout for desktop/tablet*/
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 900px) {
     main {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 100vh;
         grid-template-areas: 
-            'leftside rightside';
+        'leftside rightside';
     }
 
     #zodiacInfo {
@@ -200,7 +220,7 @@ form {
 
     #zodiacZone {
         grid-area: rightside;
-        justify-content: left;
+        justify-content: center;
     }
 
     #zoneContent {
@@ -213,5 +233,6 @@ form {
 
     .playerPic {
         width: 35rem;
+        max-width: 1000px;
     }
 }

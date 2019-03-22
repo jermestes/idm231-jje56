@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="images/favicon.png"> 
+    <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>NBA Horiscope</title>
@@ -13,12 +13,14 @@
 
 <body>
     <main>
-        <!-- Left/Top of page. Gives app description/instructions-->        
-        <section class="mainContainers" id="zodiacInfo">    
-            <img src="https://via.placeholder.com/300x300.png">
-            <h1 id="pageTitle">Jerm's NBA Horiscope Machine</h1> 
-            <p>Which NBA star does the universe say you are? Enter your birth date below or click the ball with your
-                zodiac sign to find out!
+        <!-- Title header-->
+
+        <!-- Left/Top of page. Gives app description/instructions-->
+        <section class="mainContainers" id="zodiacInfo">
+            <h1 id="pageTitle">Jerm's NBA Horiscope Machine</h1>
+            <p>Which NBA star does the universe say you are? Enter a birth date or click the ball with the
+                zodiac sign of you choice below to find out! <br>If you'd like to try again,
+                just click the "Reset" button under your player result.
             </p>
 
             <!-- Form for user to enter their birth date -->
@@ -32,14 +34,7 @@
         <!-- Right (desktop) or Bottom (mobile) half of the page. -->
         <section class="mainContainers" id="zodiacZone">
             <!-- When zodiac balls displayed-->
-            <div id="zoneContent">
-
-            </div>
-
-            <!-- When player result displayed-->
-            <!--<div id="playerRevealed">
-    
-            </div>-->
+            <div id="zoneContent"></div>
         </section>
     </main>
     <script src="main.js"></script>
