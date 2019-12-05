@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/jermeste/public_html/idm231
-    - /bin/cp * $DEPLOYPATH
+    - /bin/cp build $DEPLOYPATH
