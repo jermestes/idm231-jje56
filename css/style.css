@@ -15,6 +15,9 @@
 
 html {
     font-size: 100%;
+    /* Main theme colors */
+    --main_light: #D0DD6B;
+    --main_dark: #232323;
     /* Team Colors for each player */
     --BOS_green: #007A33;
     --BOS_gold: #BA9653;
@@ -34,7 +37,7 @@ html {
 
 body {
     font-family: 'Oswald', sans-serif;
-    background-color: #242423;
+    background-color: var(--main_dark);
     color: white;
 }
 
@@ -59,7 +62,7 @@ main {
 
 #pageTitle {
     padding-left: 1rem;
-    color: #56E39F;
+    color: #D0DD6B;
     text-align: center;
 }
 
@@ -88,9 +91,23 @@ p, form {
 }
 
 form {
-    text-align: center;
+    /*text-align: center;*/
+    text-align: left;
 }
 
+fieldset {
+    border: none;
+    padding: 0;
+}
+
+label, legend, input {
+    font-family: 'Bangers';
+    font-size: 1.5rem;
+}
+
+label, legend {
+    margin: 0 0 .5rem 0;
+}
 /* Basketballs for each zodiac sign */
 #zoneContent {
     display: flex;
@@ -234,5 +251,18 @@ form {
     .playerPic {
         width: 35rem;
         max-width: 1000px;
+        border-top: 2px solid var(--main_light);
+        border-bottom: 2px solid var(--main_light);
     }
+}
+
+.btn {
+    font-size: 1.5rem;
+    padding: .5rem;
+    min-width: 10rem;
+    cursor: pointer;
+    font-family: 'Bangers';
+    box-shadow: inset 0px -6px 4px rgba(0, 0, 0, 0.25);
+    background-color: var(--main_light);
+    border: 1px solid var(--main_dark);
 }

@@ -97,7 +97,7 @@ zodiacList.forEach(sign => {
   //reset button
   const resetButton = document.createElement('button');
   const resetText = document.createTextNode('Reset');
-  resetButton.classList.add('resetButton');
+  resetButton.classList.add('resetButton','btn');
   resetButton.addEventListener('click', reset, false);
   resetButton.appendChild(resetText);
   createPlayerDiv.appendChild(resetButton);

@@ -25,9 +25,18 @@
 
             <!-- Form for user to enter their birth date -->
             <form id="birthdayForm">
-                <label for="month"> D.O.B </label><br>
-                <input type="date" name="bday" id="bday" required><br>
-                <input type="submit" value="Submit">
+                <!-- Step 1: Choice for form of input -->
+                <fieldset>
+                    <legend>Step 1 - Choose your form of input</legend>
+                    <input type="radio" name="input-choice" id="choice-zodiac"><label for="choice-zodiac">Zodiac Sign</label><br />
+                    <input type="radio" name="input-choice" id="choice-bday"><label for="choice-bday">Birthdate</label><br />
+                </fieldset>
+                <!-- Step 2b: Birthdate dropdown -->
+                <label for="bday"> Step 2 - Select a birthdate </label><br>
+                <input type="date" name="bday" id="bday" required><br />
+                <!-- Step 3: The submit button -->
+                <label for="submit">Step 3 - Click Submit!</label><br />
+                <input id="submit" class="btn" type="submit" value="Submit">
             </form>
         </section>
 
