@@ -18,16 +18,37 @@
         <!-- Left/Top of page. Gives app description/instructions-->
         <section class="mainContainers" id="zodiacInfo">
             <h1 id="pageTitle">The NBA Horiscope Machine</h1>
-            <p>Which NBA star does the universe say you are? Enter a birth date or click the ball with the
-                zodiac sign of you choice below to find out! <br>If you'd like to try again,
-                just click the "Reset" button under your player result.
-            </p>
 
             <!-- Form for user to enter their birth date -->
             <form id="birthdayForm">
-                <label for="month"> D.O.B </label><br>
-                <input type="date" name="bday" id="bday" required><br>
-                <input type="submit" value="Submit">
+                <fieldset>
+                    <legend>Step 1 - Choose form of input</legend>
+                    <div>
+                        <input type="radio" name="input-pref" id="pref-zodiac" value="zodiac" required>
+                        <label for="pref-zodiac">Zodiac Sign</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" name="input-pref" id="pref-bday" value="birthday">
+                        <label for="pref-bday">Birth date</label>
+                    </div>
+                </fieldset>
+
+                <div>
+                    <p>Step 2 - Enter a birthday</p>
+                    <label for="month"> D.O.B </label><br>
+                    <input type="date" name="bday" id="bday" required><br>
+                </div>
+
+                <div>
+                    <p>Step 2 - Choose a zodiac sign</p>
+                    <!-- How to format this option TBD-->
+                </div>
+                
+                <div>
+                    <label for="submit">Step 3 - Click Submit!</p>
+                    <input type="submit" name="submit" value="Submit" class="submit">
+                </div>
             </form>
         </section>
 
@@ -35,6 +56,7 @@
         <section class="mainContainers" id="zodiacZone">
             <!-- When zodiac balls displayed-->
             <div id="zoneContent"></div>
+            <div id="zodiacZone-bkg"></div>
         </section>
     </main>
     <script src="main.js"></script>
