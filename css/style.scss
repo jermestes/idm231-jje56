@@ -44,9 +44,50 @@ h1,h2,h3,h4,h5,h6 {
   letter-spacing: 3px;
 }
 
-input, label {
-  font-family: 'Bangers', sans-serif;
+form {
+  .form__step {
+    margin: 0 0 4rem 0;
+    .form__step-label, select {
+      font-family: 'Bangers', sans-serif;
+      font-size: 1.5rem;
+      //margin: 0 0 .75rem 0;
+    }
+    // Step 1/3 of the form (choose your form of input)
+    &#form__step1 {
+      div {
+        padding-left: 1rem;
+        label {
+          padding-left: .625rem;
+          vertical-align: middle;
+        }
+        input[type='radio'] {
+          &:checked {
+            color: var(--theme-green);
+            +label {
+              color: var(--theme-green);
+            }
+          }
+        }
+      }
+    }
+
+    &#form__step2b {
+      display: inline;
+    }
+    
+  }
 }
+
+input, label, legend {
+  font-family: 'Bangers', sans-serif;
+  font-size: 1.5rem;
+}
+
+fieldset {
+  padding: 0;
+  border: 0;
+}
+
 
 header {
   background-color: #333533;
@@ -56,16 +97,17 @@ main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-}
-
-.mainContainers {
-  padding: 1rem;
+  
+  .mainContainers {
+    padding: 1rem;
+  }
 }
 
 #pageTitle {
-  padding-left: 1rem;
-  color: #56E39F;
-  text-align: center;
+  //padding-left: 1rem;
+  color: var(--theme-green);
+  //text-align: center;
+  font-size: 3rem;
 }
 
 p {
@@ -74,13 +116,13 @@ p {
 
 #zodiacInfo {
   text-align: left;
-  background-color: #333533;
+  //background-color: #333533;
 }
 
 #infoBox {
   width: 18.75rem;
   height: 18.75rem;
-  background-color: #177e89;
+  //background-color: #177e89;
   text-align: left;
 }
 
@@ -228,7 +270,7 @@ p, form {
   #zodiacZone-bkg {
       background: radial-gradient(50% 50% at 50% 50%, #AFA158 0%, rgba(0, 122, 193, 0) 100%);
       width: 100%;
-      height: 100%;
+      //height: 100%;
   }
 
   #zoneContent {

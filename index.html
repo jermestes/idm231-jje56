@@ -21,8 +21,8 @@
 
             <!-- Form for user to enter their birth date -->
             <form id="birthdayForm">
-                <fieldset>
-                    <legend>Step 1 - Choose form of input</legend>
+                <fieldset class="form__step" id="form__step1">
+                    <legend class="form__step-label">Step 1 - Choose form of input</legend>
                     <div>
                         <input type="radio" name="input-pref" id="pref-zodiac" value="zodiac" required>
                         <label for="pref-zodiac">Zodiac Sign</label>
@@ -34,19 +34,40 @@
                     </div>
                 </fieldset>
 
-                <div>
-                    <p>Step 2 - Enter a birthday</p>
-                    <label for="month"> D.O.B </label><br>
-                    <input type="date" name="bday" id="bday" required><br>
+                <div class="form__step" id="form__step2a">
+                    <label class="form__step-label" for="zodiac"> Step 2 - Choose a zodiac sign </label><br>
+                    <select name="zodiac">
+                        <option value="Capricorn">Capricorn</option>
+                        <option value="Aquarius">Aquarius</option>
+                        <option value="Pisces">Pisces</option>
+                        <option value="Aries">Aries</option>
+                        <option value="Taurus">Taurus</option>
+                        <option value="Gemini">Gemini</option>
+                        <option value="Cancer">Cancer</option>
+                        <option value="Leo">Leo</option>
+                        <option value="Virgo">Virgo</option>
+                        <option value="Libra">Libra</option>
+                        <option value="Scorpio">Scorpio</option>
+                        <option value="Sagittarius">Sagittarius</option>
+                    </select>
                 </div>
 
-                <div>
-                    <p>Step 2 - Choose a zodiac sign</p>
-                    <!-- How to format this option TBD-->
+                <div class="form__step" id="form__step2b">
+                    <div>
+                        <label class="form__step-label" for="month"> Month </label><br>
+                        <select name="month">
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="form__step-label" for="day"> Day </label><br>
+                        <input type="number" min="1" max="31" step="1" />
+                        
+                    </div>
                 </div>
                 
-                <div>
-                    <label for="submit">Step 3 - Click Submit!</p>
+                <div class="form__step" id="form__step3">
+                    <label class="form__step-label" for="submit">Step 3 - Click Submit!</label><br>
                     <input type="submit" name="submit" value="Submit" class="submit">
                 </div>
             </form>
