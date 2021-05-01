@@ -5,7 +5,23 @@ let whichDayOfMonth = 0;
 let birthdayForm = document.getElementById('birthdayForm');
 console.log(AstroSign);
 
+function changeInput(evt) {
+  let zodiacField = document.getElementById("form__step2a");
+  let bdayField = document.getElementById("form__step2b");
 
+  if (evt.target.id == "pref-zodiac") {
+    console.log(evt.target.id);
+    bdayField.classList.add('hidden');
+    zodiacField.classList.remove('hidden');
+  } else {
+    console.log(evt.target.id);
+    zodiacField.classList.add('hidden');
+    bdayField.classList.remove('hidden');
+  }
+}
+
+let inputOptions = document.querySelectorAll('input[name=input-pref]');
+console.log(inputOptions);
 
 //CONSTRUCTOR for player profiles objects to add to zodiac array
 //creating the constructer
@@ -38,15 +54,6 @@ let zodiacList = [Capricorn, Aquarius, Pisces, Aries, Taurus, Gemini, Cancer, Le
 zodiacList.forEach(sign => {
   const player = sign;
 
-  //create the ball foreach player. Sets class for general shape/style, ID for team colors, and text for sign name
-  const createButton = document.createElement('button');
-  createButton.setAttribute('class', 'zodiac_balls');
-  createButton.classList.add('zodiac_balls', `${sign.firstName}`);
-  createButton.setAttribute('id', `${sign.sign}Button`);
-  const buttonText = document.createTextNode(sign.sign);
-  createButton.appendChild(buttonText);
-  createButton.addEventListener('click', ballReveal, false);
-
   function ballReveal() {
     AstroSign = sign.sign;
     console.log(AstroSign);
@@ -57,11 +64,11 @@ zodiacList.forEach(sign => {
   const sound = document.createElement('audio');
   sound.setAttribute('id', `${sign.sign}Sound`);
   sound.setAttribute('src', `sounds/${sign.lastName}.mp3`);
-  createButton.appendChild(sound);
+  //createButton.appendChild(sound);
 
   //officially adds ball to page
   const zodiacPane = document.getElementById('zoneContent');
-  zodiacPane.appendChild(createButton);
+  //zodiacPane.appendChild(createButton);
 
   //create player profiles
   //individual divs with class and id
@@ -181,3 +188,4 @@ function processForm(submit) {
 
 //add event listener to submit button
 birthdayForm.addEventListener('submit', processForm, false);
+inputOptions.forEach(element => addEventListener('click', changeInput, false));

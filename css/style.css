@@ -54,6 +54,14 @@ form .form__step .form__step-label, form .form__step select {
   font-size: 1.5rem;
 }
 
+form .form__step.hidden {
+  display: none;
+}
+
+form .form__step select {
+  padding: .25rem 1rem;
+}
+
 form .form__step#form__step1 div {
   padding-left: 1rem;
 }
@@ -73,6 +81,10 @@ form .form__step#form__step1 div input[type='radio']:checked + label {
 
 form .form__step#form__step2b {
   display: inline;
+}
+
+form .form__step#form__step2b.hidden {
+  display: none;
 }
 
 input, label, legend {
@@ -282,6 +294,8 @@ p, form {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    background: url(../images/gradient-bkg.svg) no-repeat;
+    background-size: 100% 100%;
   }
   #zodiacZone-bkg {
     background: radial-gradient(50% 50% at 50% 50%, #AFA158 0%, rgba(0, 122, 193, 0) 100%);
