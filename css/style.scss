@@ -17,20 +17,6 @@ html {
   font-size: 100%;
   /* Team Colors for each player */
   --theme-green: #D0DD6B;
-  --BOS_green: #007A33;
-  --BOS_gold: #BA9653;
-  --CHIHOUTOR_red: #CE1141;
-  --GSW_blue: #006BB6;
-  --GSW_slate: #26282A;
-  --GSWLAL_gold: #FDB927;
-  --LAL_purple: #552583;
-  --OKC_darkblue: #002D62;
-  --OKC_lightblue: #007AC1;
-  --OKC_orange: #EF3B24;
-  --PHI_blue: #002F6C;
-  --PHI_gold: #BB9754;
-  --PHI_red: #D50032;
-  --SAS_silver: #C4CED4;
 }
 
 body {
@@ -127,7 +113,15 @@ p {
 
 #zodiacInfo {
   text-align: left;
+  background: url(../images/gradient-bkg.svg) no-repeat;
+  background-size: 100% 100%;
   //background-color: #333533;
+}
+
+#zodiacZone {
+  display: none;
+  background: url(../images/gradient-bkg.svg) no-repeat;
+  background-size: 100% 100%;
 }
 
 #infoBox {
@@ -182,81 +176,6 @@ p, form {
   justify-items: center;
 }
 
-.zodiac_balls:focus { outline: 0;}
-
-/* Styling the individual basketballs based on player's team color*/
-.leBron {
-  background-color: var(--LAL_purple);
-  color: white;
-  border-color: var(--GSWLAL_gold);
-}
-
-.michael {
-  background-color: var(--CHIHOUTOR_red);
-  color: black;
-  border-color: black;
-}
-
-.steph {
-  background-color: var(--GSWLAL_gold);
-  color: var(--GSW_slate);
-  border-color: var(--GSW_blue);
-}
-
-.kyrie {
-  background-color: white;
-  color: var(--BOS_green);
-  border-color: var(--BOS_green);
-}
-
-.tim {
-  background-color: var(--SAS_silver);
-  color: black;
-  border-color: white;
-}
-
-.allen {
-  background-color: black;
-  color: var(--PHI_gold);
-  border-color: var(--PHI_red);
-}
-
-.kawhi {
-  background-color: white;
-  color: black;
-  border-color: var(--CHIHOUTOR_red);
-}
-
-.wilt {
-  background-color: var(--PHI_blue);
-  color: var(--PHI_red);
-  border-color: white;
-}
-
-.james {
-  background-color: var(--CHIHOUTOR_red);
-  color: white;
-  border-color: white;
-}
-
-.kevin {
-  background-color: var(--OKC_darkblue);
-  color: white;
-  border-color: var(--GSWLAL_gold);
-}
-
-.russell {
-  background-color: var(--OKC_lightblue);
-  color: white;
-  border-color: var(--OKC_orange);
-}
-
-.larry {
-  background-color: var(--BOS_green);
-  color: white;
-  border-color: white;
-}
-
 /*Grid layout for desktop/tablet*/
 @media screen and (min-width: 900px) {
   main {
@@ -270,19 +189,15 @@ p, form {
   #zodiacInfo {
       grid-area: leftside;
       justify-self: center;
+      background-image: none;
   }
 
   #zodiacZone {
-      grid-area: rightside;
-      justify-content: center;
-      background: url(../images/gradient-bkg.svg) no-repeat;
-      background-size: 100% 100%;
-  }
-
-  #zodiacZone-bkg {
-      background: radial-gradient(50% 50% at 50% 50%, #AFA158 0%, rgba(0, 122, 193, 0) 100%);
-      width: 100%;
-      //height: 100%;
+    display: block;
+    grid-area: rightside;
+    justify-content: center;
+    background: url(../images/gradient-bkg.svg) no-repeat;
+    background-size: 100% 100%;
   }
 
   #zoneContent {
