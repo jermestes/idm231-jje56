@@ -52,31 +52,34 @@
                     </select>
                 </div>
 
-                <div class="form__step hidden" id="form__step2b">
-                    <div>
-                        <label class="form__step-label" for="month"> Month </label><br>
-                        <select name="month" id="month">
-                            <option value="1">January</option>
-                            <option value="2">February</option>
-                            <option value="3">March</option>
-                            <option value="4">April</option>
-                            <option value="5">May</option>
-                            <option value="6">June</option>
-                            <option value="7">July</option>
-                            <option value="8">August</option>
-                            <option value="9">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
-                        </select>
+                <fieldset class="form__step hidden" id="form__step2b">
+                    <legend class="form__step-label">Step 2 - Enter a birthday</legend>
+                    <div class="bday-inputs">
+                        <div>
+                            <!--<label class="form__step-label" for="month"> Month </label><br>-->
+                            <select name="month" id="month">
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </div>
+    
+                        <div>
+                            <!--<label class="form__step-label" for="day"> Day </label><br>-->
+                            <input type="number" min="1" max="31" pattern="[0-9]" step="1" id="day" required value="1"/>
+                            
+                        </div>
                     </div>
-
-                    <div>
-                        <label class="form__step-label" for="day"> Day </label><br>
-                        <input type="number" min="1" max="31" step="1" id="day"/>
-                        
-                    </div>
-                </div>
+                </fieldset>
                 
                 <div class="form__step" id="form__step3">
                     <label class="form__step-label" for="submit">Step 3 - Click Submit!</label><br>
@@ -89,30 +92,35 @@
         <section class="mainContainers" id="zodiacZone">
             <!-- When zodiac balls displayed-->
             <div id="zoneContent"></div>
-            <div id="zodiacZone-bkg"></div>
-            <svg width="546" height="511" viewBox="0 0 546 511" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M326.347 287.521C311.635 308.148 292.081 323.192 272.746 331.039C253.384 338.898 235.062 339.299 221.34 332.195C207.617 325.091 199.594 311.053 198.861 292.791C198.13 274.556 204.795 252.84 219.507 232.213C234.219 211.586 253.773 196.542 273.107 188.694C292.47 180.835 310.792 180.435 324.514 187.539C338.237 194.642 346.26 208.681 346.993 226.942C347.724 245.178 341.059 266.894 326.347 287.521Z" stroke="url(#paint0_radial)" stroke-opacity="0.5" stroke-width="17"/>
-                <path d="M367.098 306.31C341.288 340.927 307.186 366.51 273.331 380.092C239.441 393.688 206.724 394.984 182.047 382.729C157.37 370.473 143.746 346.162 142.967 315.347C142.19 284.565 154.358 248.089 180.169 213.472C205.979 178.856 240.081 153.272 273.935 139.691C307.826 126.094 340.543 124.798 365.22 137.054C389.897 149.309 403.521 173.62 404.299 204.435C405.077 235.217 392.908 271.693 367.098 306.31Z" stroke="url(#paint1_radial)" stroke-opacity="0.5" stroke-width="18"/>
-                <path d="M399.413 318.111C365.817 363.17 320.906 396.202 276.008 413.465C231.091 430.735 187.255 431.933 153.737 415.287C120.22 398.641 101.379 366.314 99.5314 325.819C97.6845 285.34 112.992 237.606 146.587 192.548C180.183 147.489 225.094 114.457 269.992 97.194C314.909 79.924 358.745 78.7261 392.263 95.3722C425.78 112.018 444.621 144.344 446.469 184.84C448.315 225.319 433.008 273.053 399.413 318.111Z" stroke="url(#paint2_radial)" stroke-opacity="0.5" stroke-width="25"/>
-                <defs>
-                <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(272.927 259.867) rotate(125.498) scale(97.3405 67.9635)">
-                <stop stop-color="#E57313"/>
-                <stop offset="0.916667" stop-color="#EF911C"/>
-                <stop offset="1" stop-color="#FDB927"/>
-                </radialGradient>
-                <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(273.633 259.891) rotate(126.708) scale(162.222 111.531)">
-                <stop stop-color="#E57313"/>
-                <stop offset="0.916667" stop-color="#EF911C"/>
-                <stop offset="1" stop-color="#FDB927"/>
-                </radialGradient>
-                <radialGradient id="paint2_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(273 255.329) rotate(126.708) scale(212.024 151.17)">
-                <stop stop-color="#E57313"/>
-                <stop offset="0.916667" stop-color="#EF911C"/>
-                <stop offset="1" stop-color="#FDB927"/>
-                </radialGradient>
-                </defs>
-            </svg>
-                
+            <div id="zodiacZone-bkg">
+                <svg width="594" height="700" viewBox="0 0 594 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="594" height="700" fill="url(#paint0_radial)"/>
+                    <path d="M344.347 378.521C329.635 399.148 310.081 414.192 290.746 422.039C271.384 429.898 253.062 430.299 239.34 423.195C225.617 416.091 217.594 402.053 216.861 383.791C216.13 365.556 222.795 343.84 237.507 323.213C252.219 302.586 271.773 287.542 291.107 279.694C310.47 271.835 328.792 271.435 342.514 278.539C356.237 285.642 364.26 299.681 364.993 317.942C365.724 336.178 359.059 357.894 344.347 378.521Z" stroke="url(#paint1_radial)" stroke-opacity="0.5" stroke-width="17"/>
+                    <path d="M385.098 397.31C359.288 431.927 325.186 457.51 291.331 471.092C257.441 484.688 224.724 485.984 200.047 473.729C175.37 461.473 161.746 437.162 160.967 406.347C160.19 375.565 172.358 339.089 198.169 304.472C223.979 269.856 258.081 244.272 291.935 230.691C325.826 217.094 358.543 215.798 383.22 228.054C407.897 240.309 421.521 264.62 422.299 295.435C423.077 326.217 410.908 362.693 385.098 397.31Z" stroke="url(#paint2_radial)" stroke-opacity="0.5" stroke-width="18"/>
+                    <path d="M417.413 409.111C383.817 454.17 338.906 487.202 294.008 504.465C249.091 521.735 205.255 522.933 171.737 506.287C138.22 489.641 119.379 457.314 117.531 416.819C115.685 376.34 130.992 328.606 164.587 283.548C198.183 238.489 243.094 205.457 287.992 188.194C332.909 170.924 376.745 169.726 410.263 186.372C443.78 203.018 462.621 235.344 464.469 275.84C466.315 316.319 451.008 364.053 417.413 409.111Z" stroke="url(#paint3_radial)" stroke-opacity="0.5" stroke-width="25"/>
+                    <defs>
+                    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(297 350) rotate(90) scale(350 297)">
+                    <stop stop-color="#AFA158"/>
+                    <stop offset="1" stop-color="#007AC1" stop-opacity="0"/>
+                    </radialGradient>
+                    <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(290.927 350.867) rotate(125.498) scale(97.3405 67.9635)">
+                    <stop stop-color="#E57313"/>
+                    <stop offset="0.916667" stop-color="#EF911C"/>
+                    <stop offset="1" stop-color="#FDB927"/>
+                    </radialGradient>
+                    <radialGradient id="paint2_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(291.633 350.891) rotate(126.708) scale(162.222 111.531)">
+                    <stop stop-color="#E57313"/>
+                    <stop offset="0.916667" stop-color="#EF911C"/>
+                    <stop offset="1" stop-color="#FDB927"/>
+                    </radialGradient>
+                    <radialGradient id="paint3_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(291 346.329) rotate(126.708) scale(212.024 151.17)">
+                    <stop stop-color="#E57313"/>
+                    <stop offset="0.916667" stop-color="#EF911C"/>
+                    <stop offset="1" stop-color="#FDB927"/>
+                    </radialGradient>
+                    </defs>
+                </svg>                    
+            </div>                
         </section>
     </main>
     <script src="main.js"></script>

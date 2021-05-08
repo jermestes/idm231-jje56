@@ -1,7 +1,7 @@
 //set initial values for zodiac form calculation variables
 let AstroSign = null;
-let whichMonth = 0;
-let whichDayOfMonth = 0;
+let whichMonth = null;
+let whichDayOfMonth = null;
 let birthdayForm = document.getElementById('birthdayForm');
 let zodiacField = document.getElementById("form__step2a");
 let bdayField = document.getElementById("form__step2b");
@@ -103,7 +103,7 @@ zodiacList.forEach(sign => {
 
   //reset button
   const resetButton = document.createElement('button');
-  const resetText = document.createTextNode('Reset');
+  const resetText = document.createTextNode('Try again');
   resetButton.classList.add('resetButton');
   resetButton.addEventListener('click', reset, false);
   resetButton.appendChild(resetText);
@@ -178,6 +178,8 @@ function processForm(submit) {
         AstroSign = "Pisces";
       } else if ((whichMonth == 1 && whichDayOfMonth >= 20) || (whichMonth == 2 && whichDayOfMonth <= 18)) {
         AstroSign = "Aquarius";
+      } else {
+        window.alert('Please enter a valid date');
       }
       console.log(`${whichMonth}/${whichDayOfMonth} - ${AstroSign}`);
   }
