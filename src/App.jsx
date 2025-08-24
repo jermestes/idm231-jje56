@@ -49,12 +49,12 @@ function App() {
   };
 
   return (
-    <>
-      <h1 className='text-5xl'>NBA Zodiac</h1>
+    <div className='bg-dark min-h-screen bg-[radial-gradient(50%_50%_at_50%_50%,rgba(175,161,88,0.5)_0%,rgba(0,122,193,0)_100%)] lg:grid lg:grid-cols-2 lg:text-left lg:content-start p-8 lg:pl-32'>
+      <h1 className='text-5xl lg:col-1'>NBA Zodiac</h1>
 
-      <p className='my-8'>Think you know what type of hooper you are? Use the form below to find out which NBA superstar aligns with your zodiac sign!</p>
+      <p className='my-8 lg:col-1'>Think you know what type of hooper you are? Use the form below to find out which NBA superstar aligns with your zodiac sign!</p>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='lg:text-left lg:col-1'>
         <MethodField method={method} setMethod={setMethod} />
         <DataField 
           method={method}
@@ -65,12 +65,12 @@ function App() {
         />     
 
         <label htmlFor="submit" className="text-2xl">Step 3 - Click submit!</label>
-        <button type="submit" id="submit" value="Submit" className='m-auto block px-14 text-2xl bg-lime text-dark'>Submit</button>
+        <button onClick={handleSubmit} type="submit" id="submit" value="Submit" className='m-auto lg:m-0 block px-14 text-2xl bg-lime text-dark'>Submit</button>
       </form>
 
 
       <Result result={result} onReset={handleReset} />
-    </>
+    </div>
   )
 }
 

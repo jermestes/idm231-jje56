@@ -1,5 +1,5 @@
 import { signPlayers } from "../source";
-const inputClasses = "bg-white text-black text-2xl";
+const inputClasses = "bg-white text-black text-2xl block m-auto px-8 py-1 lg:m-0";
 
 function DataField({
   method,
@@ -11,7 +11,7 @@ function DataField({
   if (method === "zodiac") {
     return (
       <div className="my-16">
-        <label htmlFor="" className="text-2xl">Step 2 - Choose a zodiac sign</label>
+        <label htmlFor="" className="text-2xl mb-2">Step 2 - Choose a zodiac sign</label>
         <select
           value={zodiac}
           onChange={(e) => setZodiac(e.target.value)}

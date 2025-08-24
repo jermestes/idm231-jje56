@@ -1,11 +1,11 @@
 function MethodField({ method, setMethod }) {
   const inputClasses = "peer mr-3";
-  const labelClasses = "text-2xl peer-checked:text-lime"; // fixed Tailwind color
+  const labelClasses = "text-2xl mb-2 peer-checked:text-lime m-auto lg:m-0"; // fixed Tailwind color
 
   return (
-    <fieldset>
+    <fieldset className="lg:text-left">
       <legend className="text-2xl mb-2">Step 1 - Choose a method</legend>
-      <div className="m-auto text-left w-max space-y-2">
+      <div className="m-auto text-left w-max space-y-2 lg:w-auto">
         <div>
           <input
             type="radio"
