@@ -1,12 +1,34 @@
-//initial values for zodiac form calculation variables
+//set initial values for zodiac form calculation variables
 let AstroSign = null;
-let whichMonth = 0;
-let whichDayOfMonth = 0;
+let whichMonth = null;
+let whichDayOfMonth = null;
 let birthdayForm = document.getElementById('birthdayForm');
-console.log(AstroSign);
+let zodiacField = document.getElementById("form__step2a");
+let bdayField = document.getElementById("form__step2b");
+let inputOptions = document.getElementsByName('input-pref');
+let activeInput;
+inputOptions.forEach(element => {
+  if(element.checked == true) {
+    activeInput = element.id;
+  }
+});
+console.log(activeInput);
+//when user changes input preference for step 1, show desired input for step 2
+function changeInput(evt) {
+  activeInput = evt.id;
 
+  if (evt.target.id == "pref-zodiac") {
+    console.log(evt.target.id);
+    bdayField.classList.add('hidden');
+    zodiacField.classList.remove('hidden');
+  } else {
+    console.log(evt.target.id);
+    zodiacField.classList.add('hidden');
+    bdayField.classList.remove('hidden');
+  }
+}
 
-
+inputOptions.forEach(element => element.addEventListener('click', changeInput, false));
 //CONSTRUCTOR for player profiles objects to add to zodiac array
 //creating the constructer
 function createZodiacPlayer(sign, firstName, lastName, nickname, quote) {
@@ -38,30 +60,9 @@ let zodiacList = [Capricorn, Aquarius, Pisces, Aries, Taurus, Gemini, Cancer, Le
 zodiacList.forEach(sign => {
   const player = sign;
 
-  //create the ball foreach player. Sets class for general shape/style, ID for team colors, and text for sign name
-  const createButton = document.createElement('button');
-  createButton.setAttribute('class', 'zodiac_balls');
-  createButton.classList.add('zodiac_balls', `${sign.firstName}`);
-  createButton.setAttribute('id', `${sign.sign}Button`);
-  const buttonText = document.createTextNode(sign.sign);
-  createButton.appendChild(buttonText);
-  createButton.addEventListener('click', ballReveal, false);
-
-  function ballReveal() {
-    AstroSign = sign.sign;
-    console.log(AstroSign);
-    playerReveal();
-  }
-
-  //add sounds for each button
-  const sound = document.createElement('audio');
-  sound.setAttribute('id', `${sign.sign}Sound`);
-  sound.setAttribute('src', `sounds/${sign.lastName}.mp3`);
-  createButton.appendChild(sound);
-
   //officially adds ball to page
   const zodiacPane = document.getElementById('zoneContent');
-  zodiacPane.appendChild(createButton);
+  //zodiacPane.appendChild(createButton);
 
   //create player profiles
   //individual divs with class and id
@@ -69,6 +70,12 @@ zodiacList.forEach(sign => {
   createPlayerDiv.setAttribute('class', 'zodiac_profiles');
   createPlayerDiv.setAttribute('id', sign.sign);
   createPlayerDiv.style.display = 'none';
+
+  //add sounds for each player
+  const sound = document.createElement('audio');
+  sound.setAttribute('id', `${sign.sign}Sound`);
+  sound.setAttribute('src', `sounds/${sign.lastName}.mp3`);
+  createPlayerDiv.appendChild(sound);
 
   //generate player sign and name
   const playerSignElement = document.createElement('h1');
@@ -96,7 +103,7 @@ zodiacList.forEach(sign => {
 
   //reset button
   const resetButton = document.createElement('button');
-  const resetText = document.createTextNode('Reset');
+  const resetText = document.createTextNode('Try again');
   resetButton.classList.add('resetButton');
   resetButton.addEventListener('click', reset, false);
   resetButton.appendChild(resetText);
@@ -108,7 +115,6 @@ zodiacList.forEach(sign => {
 
 let balls = document.querySelectorAll('.zodiac_balls');
 let profiles = document.querySelectorAll('.zodiac_profiles');
-let sound = null;
 
 //REVEALING the zodiac player based on button or form input
 function playerReveal() {
@@ -123,15 +129,13 @@ function playerReveal() {
       sound.play();
     } else {
       profile.style.display = 'none';
+      console.log('yo' + AstroSign);
     }
   })
 }
 
 //reset action after player reveal
 function reset() {
-  balls.forEach(ball => {
-    ball.style.display = 'initial';
-  })
   document.getElementById(`${AstroSign}`).style.display = 'none';
   sound.pause();
   sound.load();
@@ -144,38 +148,42 @@ function processForm(submit) {
   //stops submit button from refreshing page
   submit.preventDefault();
   //sets up bday input to be used for calculating zodiac
-  let birthday = new Date(document.getElementById('bday').value);
-  whichMonth = birthday.getMonth();
-  whichDayOfMonth = birthday.getDate();
-  whichMonth++;
-  whichDayOfMonth++;
-  //the zodiac algorithm - courtesy of Phil & Jervis
-  if ((whichMonth == 12 && whichDayOfMonth >= 22) || (whichMonth == 1 && whichDayOfMonth <= 19)) {
-    AstroSign = "Capricorn";
-  } else if ((whichMonth == 11 && whichDayOfMonth >= 22) || (whichMonth == 12 && whichDayOfMonth <= 21)) {
-    AstroSign = "Sagittarius";
-  } else if ((whichMonth == 10 && whichDayOfMonth >= 24) || (whichMonth == 11 && whichDayOfMonth <= 21)) {
-    AstroSign = "Scorpio";
-  } else if ((whichMonth == 9 && whichDayOfMonth >= 23) || (whichMonth == 10 && whichDayOfMonth <= 23)) {
-    AstroSign = "Libra";
-  } else if ((whichMonth == 8 && whichDayOfMonth >= 23) || (whichMonth == 9 && whichDayOfMonth <= 22)) {
-    AstroSign = "Virgo";
-  } else if ((whichMonth == 7 && whichDayOfMonth >= 23) || (whichMonth == 8 && whichDayOfMonth <= 22)) {
-    AstroSign = "Leo";
-  } else if ((whichMonth == 6 && whichDayOfMonth >= 22) || (whichMonth == 7 && whichDayOfMonth <= 22)) {
-    AstroSign = "Cancer";
-  } else if ((whichMonth == 5 && whichDayOfMonth >= 21) || (whichMonth == 6 && whichDayOfMonth <= 21)) {
-    AstroSign = "Gemini";
-  } else if ((whichMonth == 4 && whichDayOfMonth >= 20) || (whichMonth == 5 && whichDayOfMonth <= 20)) {
-    AstroSign = "Taurus";
-  } else if ((whichMonth == 3 && whichDayOfMonth >= 21) || (whichMonth == 4 && whichDayOfMonth <= 19)) {
-    AstroSign = "Aries";
-  } else if ((whichMonth == 2 && whichDayOfMonth >= 19) || (whichMonth == 3 && whichDayOfMonth <= 20)) {
-    AstroSign = "Pisces";
-  } else if ((whichMonth == 1 && whichDayOfMonth >= 20) || (whichMonth == 2 && whichDayOfMonth <= 18)) {
-    AstroSign = "Aquarius";
+  if (activeInput == 'pref-zodiac') {
+    AstroSign = document.getElementById('zodiac').value;
+    console.log(AstroSign);
+  } else {
+      whichMonth = document.getElementById('month').value;
+      whichDayOfMonth = document.getElementById('day').value;
+      if ((whichMonth == 12 && whichDayOfMonth >= 22) || (whichMonth == 1 && whichDayOfMonth <= 19)) {
+        AstroSign = "Capricorn";
+      } else if ((whichMonth == 11 && whichDayOfMonth >= 22) || (whichMonth == 12 && whichDayOfMonth <= 21)) {
+        AstroSign = "Sagittarius";
+      } else if ((whichMonth == 10 && whichDayOfMonth >= 24) || (whichMonth == 11 && whichDayOfMonth <= 21)) {
+        AstroSign = "Scorpio";
+      } else if ((whichMonth == 9 && whichDayOfMonth >= 23) || (whichMonth == 10 && whichDayOfMonth <= 23)) {
+        AstroSign = "Libra";
+      } else if ((whichMonth == 8 && whichDayOfMonth >= 23) || (whichMonth == 9 && whichDayOfMonth <= 22)) {
+        AstroSign = "Virgo";
+      } else if ((whichMonth == 7 && whichDayOfMonth >= 23) || (whichMonth == 8 && whichDayOfMonth <= 22)) {
+        AstroSign = "Leo";
+      } else if ((whichMonth == 6 && whichDayOfMonth >= 22) || (whichMonth == 7 && whichDayOfMonth <= 22)) {
+        AstroSign = "Cancer";
+      } else if ((whichMonth == 5 && whichDayOfMonth >= 21) || (whichMonth == 6 && whichDayOfMonth <= 21)) {
+        AstroSign = "Gemini";
+      } else if ((whichMonth == 4 && whichDayOfMonth >= 20) || (whichMonth == 5 && whichDayOfMonth <= 20)) {
+        AstroSign = "Taurus";
+      } else if ((whichMonth == 3 && whichDayOfMonth >= 21) || (whichMonth == 4 && whichDayOfMonth <= 19)) {
+        AstroSign = "Aries";
+      } else if ((whichMonth == 2 && whichDayOfMonth >= 19) || (whichMonth == 3 && whichDayOfMonth <= 20)) {
+        AstroSign = "Pisces";
+      } else if ((whichMonth == 1 && whichDayOfMonth >= 20) || (whichMonth == 2 && whichDayOfMonth <= 18)) {
+        AstroSign = "Aquarius";
+      } else {
+        window.alert('Please enter a valid date');
+      }
+      console.log(`${whichMonth}/${whichDayOfMonth} - ${AstroSign}`);
   }
-  console.log(`${whichMonth}/${whichDayOfMonth} - ${AstroSign}`);
+ 
   playerReveal();
 }
 

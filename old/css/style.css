@@ -1,0 +1,270 @@
+/* Loading fonts */
+@font-face {
+  font-family: 'Bangers';
+  src: url("../fonts/Bangers/Bangers-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'Oswald';
+  src: url("../fonts/Oswald/Oswald-Regular.ttf");
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  /* Team Colors for each player */
+  --theme-green: #D0DD6B;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  background-color: #242423;
+  color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bangers', sans-serif;
+  letter-spacing: 3px;
+}
+
+form .form__step {
+  margin: 0 0 4rem 0;
+}
+
+form .form__step .form__step-label, form .form__step select {
+  font-family: 'Bangers', sans-serif;
+  font-size: 1.5rem;
+}
+
+form .form__step.hidden {
+  display: none;
+}
+
+form .form__step select, form .form__step input[type=number] {
+  padding: .25rem .5rem;
+  border: none;
+}
+
+form .form__step .bday-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+form .form__step .bday-inputs > div {
+  margin-right: .5rem;
+}
+
+form .form__step .bday-inputs input[type=number] {
+  text-align: center;
+}
+
+form .form__step#form__step1 div {
+  padding: 0 1rem;
+}
+
+form .form__step#form__step1 div label {
+  padding-left: .625rem;
+  vertical-align: middle;
+}
+
+form .form__step#form__step1 div input[type='radio']:checked {
+  color: var(--theme-green);
+}
+
+form .form__step#form__step1 div input[type='radio']:checked + label {
+  color: var(--theme-green);
+}
+
+form .form__step#form__step2b {
+  display: inline;
+}
+
+form .form__step#form__step2b.hidden {
+  display: none;
+}
+
+input, label, legend {
+  font-family: 'Bangers', sans-serif;
+  font-size: 1.5rem;
+}
+
+fieldset {
+  padding: 0;
+  border: 0;
+}
+
+header {
+  background-color: #333533;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .mainContainers {
+  padding: 1rem;
+}
+
+#pageTitle {
+  color: var(--theme-green);
+  font-size: 3rem;
+}
+
+#pageTitle, form {
+  text-align: center;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+#zodiacInfo {
+  text-align: left;
+}
+
+#zodiacZone {
+  display: none;
+}
+
+#infoBox {
+  width: 18.75rem;
+  height: 18.75rem;
+  text-align: left;
+}
+
+#zodiacInfo p {
+  padding: 0 3rem;
+}
+
+p, form {
+  line-height: 2rem;
+}
+
+/* Basketballs for each zodiac sign */
+#zoneContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  /*NEED TO ADD FADE IN/OUT FOR PLAYER REVEALS AND RESETS*/
+}
+
+.zodiac_balls {
+  border-width: .33rem;
+  border-radius: 50%;
+  width: 6.25rem;
+  height: 6.25rem;
+  margin: 0 1.33rem 1.33rem 0;
+}
+
+.zodiac_balls:hover {
+  cursor: pointer;
+}
+
+.zodiac_profiles {
+  display: block;
+  text-align: center;
+}
+
+/* TEMPORARY PIC-SIZING SOLUTION. WILL USE PICTURE ELEMENT LATER  */
+.playerPic {
+  width: 100%;
+}
+
+#playerRevealed {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto auto auto auto;
+  -ms-grid-columns: 100%;
+      grid-template: auto auto auto auto auto / 100%;
+  justify-items: center;
+}
+
+/*Grid layout for desktop/tablet*/
+@media screen and (min-width: 900px) {
+  main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    -ms-grid-rows: 100vh;
+        grid-template-rows: 100vh;
+        grid-template-areas: 'leftside rightside';
+  }
+  #pageTitle, form {
+    text-align: left;
+  }
+  #zodiacInfo {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: leftside;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    background-image: none;
+  }
+  #zodiacZone {
+    display: block;
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: rightside;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #zoneContent {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+  #playerRevealed {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+  .playerPic {
+    width: 35rem;
+    max-width: 1000px;
+  }
+}
+
+.submit {
+  background-color: var(--theme-green);
+  -webkit-box-shadow: inset 0 -6px 4px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: inset 0 -6px 4px 0 rgba(0, 0, 0, 0.25);
+  width: 170px;
+  font-size: 24px;
+  font-family: 'Bangers';
+  padding: 10px 0;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+/*# sourceMappingURL=style.css.map */
