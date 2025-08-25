@@ -14,6 +14,7 @@ function Result({result, onReset}) {
         </div>
       </div>
       
+      
       <button onClick={onReset} className='m-auto block px-14 py-2 text-2xl bg-dark text-white text-shadow-lime w-full try-again '>Try Again</button>
     </div>
   );
