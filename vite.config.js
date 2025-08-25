@@ -10,4 +10,3 @@ export default defineConfig({
   ],
   base: '/idm231-jje56/',
 })
-

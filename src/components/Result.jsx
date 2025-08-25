@@ -12,10 +12,9 @@ function Result({result, onReset}) {
           <h4 className="text-3xl">{result.name}</h4>
           <p className="">{result.quote}</p>
         </div>
-        
       </div>
       
-      <button onClick={onReset} className='m-auto block px-14 py-2 text-2xl bg-dark text-white text-shadow-lime w-full try-again'>Try Again</button>
+      <button onClick={onReset} className='m-auto block px-14 py-2 text-2xl bg-dark text-white text-shadow-lime w-full try-again '>Try Again</button>
     </div>
   );
 }
