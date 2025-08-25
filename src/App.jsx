@@ -42,7 +42,6 @@ function App() {
   };
 
   const handleReset = () => {
-    setMethod("zodiac");
     setZodiac("");
     setBirthdate("");
     setResult(null);

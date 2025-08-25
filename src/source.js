@@ -72,3 +72,11 @@ export const signPlayers = {
     quote: "The Hick from French Lick: You may not look the part, but there’s no doubt you can compete with the best.",
   },
 };
+
+for (const key in signPlayers) {
+  if (signPlayers.hasOwnProperty(key)) { 
+    let lastName = signPlayers[key].name.split(" ")[1].toLowerCase();
+    signPlayers[key].sound = '/sounds/' + lastName + '.mp3';
+    signPlayers[key].image = '/images/' + lastName + '.jpg';
+  }
+}
