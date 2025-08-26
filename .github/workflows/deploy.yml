@@ -2,7 +2,7 @@ name: Deploy Vite site to GitHub Pages
 
 on:
   push:
-    branches: [ master, gh-pages ] # or your default branch
+    branches: [ master ] # or your default branch
 
 jobs:
   build:
