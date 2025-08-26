@@ -76,7 +76,7 @@ export const signPlayers = {
 for (const key in signPlayers) {
   if (signPlayers.hasOwnProperty(key)) { 
     let lastName = signPlayers[key].name.split(" ")[1].toLowerCase();
-    signPlayers[key].sound = '/sounds/' + lastName + '.mp3';
-    signPlayers[key].image = '/images/' + lastName + '.jpg';
+    signPlayers[key].sound = '/idm231-jje56/sounds/' + lastName + '.mp3';
+    signPlayers[key].image = '/idm231-jje56/images/' + lastName + '.jpg';
   }
 }
